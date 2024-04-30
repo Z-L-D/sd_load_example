@@ -29,10 +29,11 @@ def load_model_from_config(config_path, ckpt, verbose=False):
     # Load the configuration file
     config = OmegaConf.load(config_path)  # Assuming the configuration path is correct
 
-    # Create the model from the configuration
+    # Create the model from the configuration and access model structure
     model = instantiate_from_config(config.model)
-
-    # print("model", model)
+    print("\n============================\n")
+    print("model", model)
+    print("\n============================\n")
 
     # Access the VAE
     vae = model.first_stage_model
