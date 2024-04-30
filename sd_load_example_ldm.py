@@ -60,7 +60,7 @@ def load_model_from_config(config_path, ckpt, verbose=False):
     model.eval()
     return model
 
-config_path = ""
+config_path = "configs/stable-diffusion/v1-inference.yaml"
 ckpt = ""
 
 load_model_from_config(config_path, ckpt, verbose=False)
