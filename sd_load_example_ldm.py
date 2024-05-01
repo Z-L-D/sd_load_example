@@ -31,9 +31,9 @@ def load_model_from_config(config_path, ckpt, verbose=False):
 
     # Create the model from the configuration and access model structure
     model = instantiate_from_config(config.model)
-    print("\n============================\n")
-    print("model", model)
-    print("\n============================\n")
+    # print("\n============================\n")
+    # print("model", model)
+    # print("\n============================\n")
 
     # Access the VAE
     vae = model.first_stage_model
@@ -41,13 +41,15 @@ def load_model_from_config(config_path, ckpt, verbose=False):
     # Access the U-Net
     unet = model.model.diffusion_model
 
-    print("\n============================\n")
-    print("vae: ", vae)
-    print("\n============================\n")
     print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
     print("\n============================\n")
     print("unet: ", unet)
     print("\n============================\n")
+    print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    print("\n============================\n")
+    print("vae: ", vae)
+    print("\n============================\n")
+    print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
 
     m, u = model.load_state_dict(sd, strict=False)
     if len(m) > 0 and verbose:
@@ -62,6 +64,6 @@ def load_model_from_config(config_path, ckpt, verbose=False):
     return model
 
 config_path = "configs/stable-diffusion/v1-inference.yaml"
-ckpt = ""
+ckpt = "E:/Applications/LocalSD/Models/Stable-diffusion/cineDiffusion_v3.safetensors"
 
 load_model_from_config(config_path, ckpt, verbose=False)
