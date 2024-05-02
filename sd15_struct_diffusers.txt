@@ -218,23 +218,23 @@ Model Structure: UNet2DConditionModel(
             )
         )
     )   
-    (u  p_blocks): ModuleList(
+    (up_blocks): ModuleList(
         (0): UpBlock2D(
             (resnets): ModuleList(
                 (0-2): 3 x ResnetBlock2D(
-                  (norm1): GroupNorm(32, 2560, eps=1e-05, affine=True)
-                  (conv1): Conv2d(2560, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-                  (time_emb_proj): Linear(in_features=1280, out_features=1280, bias=True)
-                  (norm2): GroupNorm(32, 1280, eps=1e-05, affine=True)
-                  (dropout): Dropout(p=0.0, inplace=False)
-                  (conv2): Conv2d(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-                  (nonlinearity): SiLU()
-                  (conv_shortcut): Conv2d(2560, 1280, kernel_size=(1, 1), stride=(1, 1))
+                    (norm1): GroupNorm(32, 2560, eps=1e-05, affine=True)
+                    (conv1): Conv2d(2560, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (time_emb_proj): Linear(in_features=1280, out_features=1280, bias=True)
+                    (norm2): GroupNorm(32, 1280, eps=1e-05, affine=True)
+                    (dropout): Dropout(p=0.0, inplace=False)
+                    (conv2): Conv2d(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (nonlinearity): SiLU()
+                    (conv_shortcut): Conv2d(2560, 1280, kernel_size=(1, 1), stride=(1, 1))
                 )
             )
             (upsamplers): ModuleList(
                 (0): Upsample2D(
-                  (conv): Conv2d(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                    (conv): Conv2d(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
                 )
             )
         )
@@ -454,7 +454,7 @@ Model Structure: UNet2DConditionModel(
             )
         )
     )   
-    (m  id_block): UNetMidBlock2DCrossAttn(
+    (mid_block): UNetMidBlock2DCrossAttn(
         (attentions): ModuleList(
             (0): Transformer2DModel(
                 (norm): GroupNorm(32, 1280, eps=1e-06, affine=True)
